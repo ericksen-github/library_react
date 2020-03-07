@@ -3,13 +3,10 @@ import React, { Component } from "react";
 class Book extends Component {
   render() {
     const { book, onDelete, onReadUpdate } = this.props;
-    let a, b;
 
-    if (book.read === "Read") {
-      a = "selected";
-    } else {
-      b = "selected";
-    }
+    // correctly applies Read/Not Read status on book load
+    let a, b;
+    book.read === "Read" ? (a = "selected") : (b = "selected");
 
     return (
       <tr>

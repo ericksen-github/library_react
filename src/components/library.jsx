@@ -6,6 +6,7 @@ class Library extends Component {
   render() {
     const { books, onDelete, onReadUpdate } = this.props;
     return (
+      // creates table and table headers
       <div>
         <div id="overlay"></div>
         <TopBar />

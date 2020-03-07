@@ -123,11 +123,6 @@ select {
   display: inline-block;
 }
 
-#promptContainer {
-  top: 100px;
-  margin: 0 auto;
-}
-
 #inputForm {
   position: absolute;
   background-color: rgb(255, 255, 255);

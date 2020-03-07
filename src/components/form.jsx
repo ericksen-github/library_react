@@ -18,6 +18,7 @@ class Form extends Component {
   makeNewBook = () => {
     const { onNewBook } = this.props;
 
+    // pulls values from input textboxes on form
     const title = document.getElementById("titleText").value;
     const author = document.getElementById("authorText").value;
     const pages = document.getElementById("pagesText").value;
@@ -25,22 +26,25 @@ class Form extends Component {
     const status = a.options[a.selectedIndex].value;
 
     if (this.handleErrorChecking(title, author, pages) === false) {
+      // verifies inputs are valid
       return;
     }
 
     const newBook = {
+      // creates new book to add to library
       title: title,
       author: author,
       pages: pages,
       read: status
     };
 
-    onNewBook(newBook);
+    onNewBook(newBook); // passes book to App.js to be added to component state
     this.handleHideForm();
   };
 
   handleErrorChecking(titleText, authorText, pagesText) {
-    let checker = true;
+    // validates inputs and highlights
+    let checker = true; // textboxes w/ issues
     if (titleText === "" || titleText == null) {
       document.getElementById("titleText").style.border = "solid 1px red";
       checker = false;
@@ -68,7 +72,9 @@ class Form extends Component {
   }
 
   render() {
+    // generates form at page load
     return (
+      // form generates as hidden from user
       <div id="inputForm">
         <div id="formTitle">New Book</div>
         <div id="inputsContainer">

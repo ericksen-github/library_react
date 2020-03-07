@@ -41,14 +41,9 @@ class App extends Component {
 
   handleReadUpdate = book => {
     const books = this.state.books;
-
     for (const b of books) {
       if (b.title === book.title) {
-        if (b.read === "Read") {
-          b.read = "Not Read";
-        } else {
-          b.read = "Read";
-        }
+        b.read === "Read" ? (b.read = "Not Read") : (b.read = "Read");
       }
     }
 
@@ -70,6 +65,7 @@ class App extends Component {
   };
 
   handleStorage = books => {
+    // called on handleReadUpdate, handleDelete, and handleNewBook to update local storage
     if (localStorageFunctions.storageAvailable("localStorage")) {
       localStorage.setItem("savedLibrary", JSON.stringify(books));
     }

@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 
 class NewBook extends Component {
-  createForm = () => {
+  showForm = () => {
     document.getElementById("inputForm").style.display = "block";
     document.getElementById("overlay").style.display = "block";
   };
 
   render() {
     return (
-      <div id="newBookButton" onClick={() => this.createForm()}>
+      <div id="newBookButton" onClick={() => this.showForm()}>
         Add Book
       </div>
     );
